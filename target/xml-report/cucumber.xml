@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="0.607">
-    <testcase classname="Automation Exercise API Test" name="Get All Product List" time="0.13">
-        <system-out><![CDATA[Given Automation Exercise Api Get request icin gerekli URL ve Body hazirla..passed
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="5.667">
+    <testcase classname="Automation Exercise API Test" name="Get All Brands List" time="5.202">
+        <system-out><![CDATA[Given Automation Exercise Api Get All Brands request icin gerekli URL ve Body hazirla.passed
 Then Automation Exercise Api Get request icin Expected Data hazirla.........passed
-And Automation Exercise Api Get request sonucunda donen Response kaydet.....passed
-And Automation Exercise Api Get request sonucunda donen Response u assert et.passed
+And Automation Exercise Api Get All Brands request sonucunda donen Response kaydet.passed
+And Automation Exercise Api Get All Brands request sonucunda donen Response u assert et.passed
 ]]></system-out>
     </testcase>
 </testsuite>

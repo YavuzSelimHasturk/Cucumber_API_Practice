@@ -16,7 +16,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features/api_automationexercise",
         glue = {"stepDefinitions/api", "hooks/api"},
         tags = "@wip",
-        dryRun = true
+        dryRun = false
 )
 
 public class RunnerAutoExercise{

@@ -1,7 +1,7 @@
 
 
 Feature: Automation Exercise API Test
-@wip
+
   Scenario: Get All Product List
 
     Given Automation Exercise Api Get request icin gerekli URL ve Body hazirla

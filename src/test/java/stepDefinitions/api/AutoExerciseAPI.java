@@ -95,4 +95,28 @@ public class AutoExerciseAPI {
     public void automationExerciseApiGetAllBrandsRequestSonucundaDonenResponseUAssertEt() {
         assertEquals(200, response.statusCode());
     }
+
+    @Given("Automation Exercise Api Put To All Brands List request icin gerekli URL ve Body hazirla")
+    public void automationExerciseApiPutToAllBrandsListRequestIcinGerekliURLVeBodyHazirla() {
+        spec.pathParam("pp1","brandsList");
+    }
+
+    @Then("Automation Exercise Api Put request icin Expected Data hazirla")
+    public void automationExerciseApiPutRequestIcinExpectedDataHazirla() {
+        expectedBody= new Pojo_AutoExercise_ExpectedBody(405,"This request method is not supported.");
+    }
+
+    @And("Automation Exercise Api Put to All Brands List request sonucunda donen Response kaydet")
+    public void automationExerciseApiPutToAllBrandsListRequestSonucundaDonenResponseKaydet() {
+        response = given().spec(spec).contentType(ContentType.HTML).when().body(expectedBody.toString()).put("/{pp1}");
+          response.prettyPrint();
+
+    }
+
+    @And("Automation Exercise Api Put to All Brands request sonucunda donen Response u assert et")
+    public void automationExerciseApiPutToAllBrandsRequestSonucundaDonenResponseUAssertEt() {
+        Pojo_AutoExercise_ExpectedBody respPojo = response.as(Pojo_AutoExercise_ExpectedBody.class);
+        assertEquals(expectedBody.getMessage(),respPojo.getMessage());
+        assertEquals(expectedBody.getResponseCode(),respPojo.getResponseCode());
+    }
 }

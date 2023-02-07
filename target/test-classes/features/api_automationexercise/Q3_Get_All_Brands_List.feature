@@ -1,5 +1,5 @@
 Feature: Automation Exercise API Test
-@wip
+
   Scenario: Get All Brands List
 
     Given Automation Exercise Api Get All Brands request icin gerekli URL ve Body hazirla

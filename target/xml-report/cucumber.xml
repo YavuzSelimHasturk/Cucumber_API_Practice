@@ -1,10 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="6.501">
-    <testcase classname="Automation Exercise API Test" name="Get All Brands List" time="5.92">
-        <system-out><![CDATA[Given Automation Exercise Api Get All Brands request icin gerekli URL ve Body hazirla.passed
-Then Automation Exercise Api Get request icin Expected Data hazirla.........passed
-And Automation Exercise Api Get All Brands request sonucunda donen Response kaydet.passed
-And Automation Exercise Api Get All Brands request sonucunda donen Response u assert et.passed
-]]></system-out>
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="6.876">
+    <testcase classname="Automation Exercise API Test" name="Put to All Brands List" time="6.304">
+        <failure message="Cannot parse object because no supported Content-Type was specified in response. Content-Type was 'text/html; charset=utf-8'." type="java.lang.IllegalStateException"><![CDATA[Given Automation Exercise Api Put To All Brands List request icin gerekli URL ve Body hazirla.passed
+Then Automation Exercise Api Put request icin Expected Data hazirla.........passed
+And Automation Exercise Api Put to All Brands List request sonucunda donen Response kaydet.passed
+And Automation Exercise Api Put to All Brands request sonucunda donen Response u assert et.failed
+
+StackTrace:
+java.lang.IllegalStateException: Cannot parse object because no supported Content-Type was specified in response. Content-Type was 'text/html; charset=utf-8'.
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:105)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.mapping.ObjectMapping.deserialize(ObjectMapping.groovy:95)
+	at io.restassured.internal.mapping.ObjectMapping$deserialize.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at io.restassured.internal.RestAssuredResponseOptionsGroovyImpl.as(RestAssuredResponseOptionsGroovyImpl.groovy:231)
+	at io.restassured.internal.RestAssuredResponseOptionsImpl.as(RestAssuredResponseOptionsImpl.java:169)
+	at stepDefinitions.api.AutoExerciseAPI.automationExerciseApiPutToAllBrandsRequestSonucundaDonenResponseUAssertEt(AutoExerciseAPI.java:118)
+	at ✽.Automation Exercise Api Put to All Brands request sonucunda donen Response u assert et(file:///C:/Users/Yvz/IdeaProjects/APICucumberTeam105/src/test/resources/features/api_automationexercise/Q4_Put_To_All_Brands_List.feature:8)
+]]></failure>
     </testcase>
 </testsuite>

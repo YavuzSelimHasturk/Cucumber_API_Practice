@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="5.667">
-    <testcase classname="Automation Exercise API Test" name="Get All Brands List" time="5.202">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="6.501">
+    <testcase classname="Automation Exercise API Test" name="Get All Brands List" time="5.92">
         <system-out><![CDATA[Given Automation Exercise Api Get All Brands request icin gerekli URL ve Body hazirla.passed
 Then Automation Exercise Api Get request icin Expected Data hazirla.........passed
 And Automation Exercise Api Get All Brands request sonucunda donen Response kaydet.passed

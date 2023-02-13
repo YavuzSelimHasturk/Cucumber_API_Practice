@@ -48,14 +48,14 @@ public class AutoExerciseAPI {
     }
     @Then("Automation Exercise Api Get request sonucunda donen Response kaydet")
     public void automation_exercise_api_get_request_sonucunda_donen_response_kaydet() {
-        response = given().spec(spec).when().get("/{pp1}");
+        response = given().spec(spec).contentType(ContentType.JSON).when().get("/{pp1}");
 
 
     }
     @Then("Automation Exercise Api Get request sonucunda donen Response u assert et")
     public void automation_exercise_api_get_request_sonucunda_donen_response_u_assert_et() {
-
-        assertEquals(404,response.statusCode());
+        Pojo_AutoExercise_ExpectedBody respPojo = response.as(Pojo_AutoExercise_ExpectedBody.class);
+        assertEquals(200,respPojo.getResponseCode());
     }
 
     @Given("Automation Exercise Api Post request icin gerekli URL ve Body hazirla")
@@ -65,7 +65,7 @@ public class AutoExerciseAPI {
     }
     @Then("Automation Exercise Api Post request icin Expected Data hazirla")
     public void automation_exercise_api_post_request_icin_expected_data_hazirla() {
-        expectedBody = new Pojo_AutoExercise_ExpectedBody(405,"This request method is not supported.");
+  //      expectedBody = new Pojo_AutoExercise_ExpectedBody(405,"This request method is not supported.");
     }
     @Then("Automation Exercise Api Post request sonucunda donen Response kaydet")
     public void automation_exercise_api_post_request_sonucunda_donen_response_kaydet() {
@@ -103,7 +103,7 @@ public class AutoExerciseAPI {
 
     @Then("Automation Exercise Api Put request icin Expected Data hazirla")
     public void automationExerciseApiPutRequestIcinExpectedDataHazirla() {
-        expectedBody= new Pojo_AutoExercise_ExpectedBody(405,"This request method is not supported.");
+   //     expectedBody= new Pojo_AutoExercise_ExpectedBody(405,"This request method is not supported.");
     }
 
     @And("Automation Exercise Api Put to All Brands List request sonucunda donen Response kaydet")

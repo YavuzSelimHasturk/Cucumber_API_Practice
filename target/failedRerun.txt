@@ -1,1 +1,1 @@
-file:src/test/resources/features/api_automationexercise/Q4_Put_To_All_Brands_List.feature:3
+file:src/test/resources/features/api_automationexercise/Q1_Get_All_Product_List.feature:5

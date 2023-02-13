@@ -11,4 +11,6 @@ public class Pojo_AutoExercise_ExpectedBody {
 
     private int responseCode;
     private String message;
+    private String[] products;
+
 }

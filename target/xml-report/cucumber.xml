@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="5.99">
-    <testcase classname="Automation Exercise API Test" name="Get All Product List" time="5.458">
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="6.714">
+    <testcase classname="Automation Exercise API Test" name="Get All Product List" time="6.188">
         <failure message="Cannot parse object because no supported Content-Type was specified in response. Content-Type was 'text/html'." type="java.lang.IllegalStateException"><![CDATA[Given Automation Exercise Api Get request icin gerekli URL ve Body hazirla..passed
 Then Automation Exercise Api Get request icin Expected Data hazirla.........passed
 And Automation Exercise Api Get request sonucunda donen Response kaydet.....passed
@@ -22,7 +22,7 @@ java.lang.IllegalStateException: Cannot parse object because no supported Conten
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
 	at io.restassured.internal.RestAssuredResponseOptionsGroovyImpl.as(RestAssuredResponseOptionsGroovyImpl.groovy:231)
 	at io.restassured.internal.RestAssuredResponseOptionsImpl.as(RestAssuredResponseOptionsImpl.java:169)
-	at stepDefinitions.api.AutoExerciseAPI.automation_exercise_api_get_request_sonucunda_donen_response_u_assert_et(AutoExerciseAPI.java:57)
+	at stepDefinitions.api.AutoExerciseAPI.automation_exercise_api_get_request_sonucunda_donen_response_u_assert_et(AutoExerciseAPI.java:77)
 	at ✽.Automation Exercise Api Get request sonucunda donen Response u assert et(file:///C:/Users/Yvz/IdeaProjects/APICucumberTeam105/src/test/resources/features/api_automationexercise/Q1_Get_All_Product_List.feature:10)
 ]]></failure>
     </testcase>

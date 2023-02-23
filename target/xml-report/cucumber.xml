@@ -1,29 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="6.714">
-    <testcase classname="Automation Exercise API Test" name="Get All Product List" time="6.188">
-        <failure message="Cannot parse object because no supported Content-Type was specified in response. Content-Type was 'text/html'." type="java.lang.IllegalStateException"><![CDATA[Given Automation Exercise Api Get request icin gerekli URL ve Body hazirla..passed
-Then Automation Exercise Api Get request icin Expected Data hazirla.........passed
-And Automation Exercise Api Get request sonucunda donen Response kaydet.....passed
-And Automation Exercise Api Get request sonucunda donen Response u assert et.failed
-
-StackTrace:
-java.lang.IllegalStateException: Cannot parse object because no supported Content-Type was specified in response. Content-Type was 'text/html'.
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
-	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
-	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:105)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
-	at io.restassured.internal.mapping.ObjectMapping.deserialize(ObjectMapping.groovy:95)
-	at io.restassured.internal.mapping.ObjectMapping$deserialize.call(Unknown Source)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
-	at io.restassured.internal.RestAssuredResponseOptionsGroovyImpl.as(RestAssuredResponseOptionsGroovyImpl.groovy:231)
-	at io.restassured.internal.RestAssuredResponseOptionsImpl.as(RestAssuredResponseOptionsImpl.java:169)
-	at stepDefinitions.api.AutoExerciseAPI.automation_exercise_api_get_request_sonucunda_donen_response_u_assert_et(AutoExerciseAPI.java:77)
-	at ✽.Automation Exercise Api Get request sonucunda donen Response u assert et(file:///C:/Users/Yvz/IdeaProjects/APICucumberTeam105/src/test/resources/features/api_automationexercise/Q1_Get_All_Product_List.feature:10)
-]]></failure>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="7.273">
+    <testcase classname="Faker API sorgu" name="Adress sorgusu" time="6.808">
+        <system-out><![CDATA[Given Faker api URL icin gerekli path param "addresses" ve query param "1"hazirla.passed
+Then Faker apiden gelen cevabi response kaydet..............................passed
+And Faker apiden donen response'da status "OK", code 200 ve total 1 oldugunu assert et.passed
+]]></system-out>
     </testcase>
 </testsuite>

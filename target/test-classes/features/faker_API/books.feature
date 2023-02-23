@@ -1,0 +1,1 @@
+Feature: Faker API sorgu

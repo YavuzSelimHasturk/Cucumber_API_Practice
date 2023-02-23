@@ -9,15 +9,20 @@ import io.restassured.response.Response;
 import io.restassured.specification.*;
 
 import pojos.Faker_Pojo.AddressAPIPojo;
+import pojos.Faker_Pojo.BooksAPIPojo;
+import pojos.Faker_Pojo.BooksDataPojo;
 import utilities.ConfigReader;
 
+import java.util.Arrays;
+
 import static io.restassured.RestAssured.given;
-import static org.testng.AssertJUnit.assertEquals;
+import static org.testng.AssertJUnit.*;
 
 
 public class FakerAPI {
     private RequestSpecification spec;
     Response response;
+    BooksDataPojo expectedBooksDataBody;
 
     @Before(order = 0)
     public void beforeAPIScenario() {
@@ -33,7 +38,7 @@ public class FakerAPI {
     @Then("Faker apiden gelen cevabi response kaydet")
     public void fakerApidenGelenCevabiResponseKaydet() {
         response  = given().spec(spec).when().get("/{pp1}");
-        response.prettyPrint();
+
     }
 
     @And("Faker apiden donen response'da status {string}, code {int} ve total {int} oldugunu assert et")
@@ -43,7 +48,27 @@ public class FakerAPI {
         assertEquals(status,respPojo.getStatus());
         assertEquals(code,respPojo.getCode());
         assertEquals(total,respPojo.getTotal());
+    }
 
+    @And("Faker apiden donen response'da books status {string}, code {int} ve total {int} oldugunu ve {string},{string},{string},{string} alanlarinin geldigini assert et")
+    public void fakerApidenDonenResponseDaBooksStatusCodeVeTotalOldugunuVeAlanlarininGeldiginiAssertEt(String status, int code, int total, String title, String author, String genre, String description) {
+
+        BooksAPIPojo respPojo= response.as(BooksAPIPojo.class);
+
+        assertEquals(respPojo.getData().length,total);
+
+        assertEquals(status,respPojo.getStatus());
+        assertEquals(code,respPojo.getCode());
+        assertEquals(total,respPojo.getTotal());
+        assertEquals(respPojo.getData().length, total);
+
+         BooksDataPojo respBooksDataPojo =respPojo.getData()[0];
+         assertFalse(respBooksDataPojo.getAuthor().isEmpty());
+         assertFalse(respBooksDataPojo.getTitle().isEmpty());
+         assertFalse(respBooksDataPojo.getGenre().isEmpty());
+         assertFalse(respBooksDataPojo.getDescription().isEmpty());
+
+        System.out.println(respBooksDataPojo);
 
     }
 }

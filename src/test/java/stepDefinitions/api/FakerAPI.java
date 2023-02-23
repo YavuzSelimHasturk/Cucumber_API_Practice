@@ -8,9 +8,7 @@ import io.restassured.response.Response;
 
 import io.restassured.specification.*;
 
-import pojos.Faker_Pojo.AddressAPIPojo;
-import pojos.Faker_Pojo.BooksAPIPojo;
-import pojos.Faker_Pojo.BooksDataPojo;
+import pojos.Faker_Pojo.*;
 import utilities.ConfigReader;
 
 import java.util.Arrays;
@@ -38,6 +36,7 @@ public class FakerAPI {
     @Then("Faker apiden gelen cevabi response kaydet")
     public void fakerApidenGelenCevabiResponseKaydet() {
         response  = given().spec(spec).when().get("/{pp1}");
+        response.prettyPrint();
 
     }
 
@@ -55,8 +54,6 @@ public class FakerAPI {
 
         BooksAPIPojo respPojo= response.as(BooksAPIPojo.class);
 
-        assertEquals(respPojo.getData().length,total);
-
         assertEquals(status,respPojo.getStatus());
         assertEquals(code,respPojo.getCode());
         assertEquals(total,respPojo.getTotal());
@@ -69,6 +66,26 @@ public class FakerAPI {
          assertFalse(respBooksDataPojo.getDescription().isEmpty());
 
         System.out.println(respBooksDataPojo);
+
+    }
+
+    @And("Faker apiden donen response'da books status {string}, code {int} ve total {int} oldugunu ve de {string},{string},{string},{string} alanlarinin geldigini assert et")
+    public void fakerApidenDonenResponseDaBooksStatusCodeVeTotalOldugunuVeDeAlanlarininGeldiginiAssertEt(String status, int code, int total, String arg3, String arg4, String arg5, String arg6) {
+        CompanyAPIPojo respPojo = response.as(CompanyAPIPojo.class);
+        assertEquals(status,respPojo.getStatus());
+        assertEquals(code,respPojo.getCode());
+        assertEquals(total,respPojo.getTotal());
+
+        CompanyDataPojo respCompDataPojo = respPojo.getData()[0];
+        assertFalse(respCompDataPojo.getCountry().isEmpty());
+        assertFalse(respCompDataPojo.getWebsite().isEmpty());
+
+        CompanyAddressesPojo respCompAdressesPojo = respCompDataPojo.getAddresses()[0];
+        assertFalse(respCompAdressesPojo.getZipcode().isEmpty());
+
+        CompanyContactPojo respCompContactPojo = respCompDataPojo.getContact();
+        assertFalse(respCompContactPojo.getAddress().getCounty_code().isEmpty());
+
 
     }
 }

@@ -1,5 +1,5 @@
 
-@wip
+
 Feature: Faker API sorgu
 
   Scenario: Adress sorgusu

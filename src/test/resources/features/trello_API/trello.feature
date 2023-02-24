@@ -1,6 +1,6 @@
 
   Feature: Trello API
-    @wip
+
     Scenario: Create a Board
 
       Given Trello URL icin gerekli path ve querry parametreleri hazirlanir
